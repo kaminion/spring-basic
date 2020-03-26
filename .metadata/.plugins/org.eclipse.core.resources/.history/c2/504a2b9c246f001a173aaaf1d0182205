@@ -1,0 +1,14 @@
+package t_tok01;
+
+public class Main {
+	
+	public static void main(String[] args)
+	{
+		HelloWorld hello = new HelloWorld();
+		hello.setMessage("Hello world");
+		
+		System.out.println(hello.getMeseage());
+		
+	}
+
+}
