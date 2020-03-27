@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop
+    https://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+    <!-- full qulifying name -->
+    <bean id="helloWorld" class="t_tok01.HelloWorld">
+    	<property name="message" value="Inversion of Control"></property>
+    </bean>    
+    
+    <bean id="battery" class="t_tok02.Battery">
+    	<property name="name" value="스프링으로 만든 배터리 - 세터방법"></property>
+    </bean>
+    
+    <bean id="battery2" class="t_tok02.Battery">
+    	<constructor-arg name="name" value="스프링으로 산 배터리 - 생성자 주입"></constructor-arg>
+    </bean>
+    
+    <bean id="blackPhone" class="t_tok02.BlackPhone">
+    	<constructor-arg ref="battery2"/>
+    </bean>
+    
+    <!-- 핵심로직인 ItemTarget을 bean으로 설정한다 -->
+	<bean id="itemTarget" class="t_tok03.ItemTarget"></bean>
+
+    <!-- 관점 로직인 LogginAdvice를 빈으로 설정한다. -->
+    <bean id="LoggingAdvice" class="t_tok03.LoggingAdvice"></bean>
+    
+    <aop:config>
+    	<aop:aspect ref="LoggingAdvice">
+    		<aop:before method="beforeAdvice" pointcut="execution(* t_tok03.Itemtarget.*())" />
+    	</aop:aspect>
+    </aop:config>
+    
+      
+</beans>

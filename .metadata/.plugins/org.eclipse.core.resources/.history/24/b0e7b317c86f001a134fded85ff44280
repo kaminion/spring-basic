@@ -1,0 +1,16 @@
+package t_tok2;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		WhitePhone wp = new WhitePhone();
+		wp.show();
+		
+		BlackPhone bp = new BlackPhone();
+		bp.show();
+		
+		Battery newBattery = new Battery();
+	}
+
+}

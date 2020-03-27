@@ -1,0 +1,11 @@
+package t_tok2;
+
+public class WhitePhone implements Phone {
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

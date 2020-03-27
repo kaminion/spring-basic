@@ -1,0 +1,7 @@
+package t_tok03;
+
+// Advice : 부가기능을 담당하는 모듈(commit 등) 관점
+public class LoggingAdvice {
+
+	
+}

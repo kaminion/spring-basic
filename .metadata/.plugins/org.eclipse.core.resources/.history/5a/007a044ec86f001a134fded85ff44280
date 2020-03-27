@@ -1,0 +1,25 @@
+package t_tok2;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		WhitePhone wp = new WhitePhone();
+		wp.show();
+		
+		BlackPhone bp = new BlackPhone();
+		bp.show();
+		
+		// 생성자 주입방법
+		Battery newBattery = new Battery("새로산 배터리 - 생성자");
+		bp.setBattery(newBattery);
+		bp.show();
+		
+		// 세터 주입법
+		newBattery.setName("새로 산 배터리 - 세터");
+		bp.setBattery(newBattery);
+		bp.show();
+		
+	}
+
+}
